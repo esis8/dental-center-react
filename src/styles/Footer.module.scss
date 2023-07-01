@@ -1,0 +1,13 @@
+@use "./variables" as var;
+
+.footer{
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .titulo{
+    color: #FFFFFF;
+  }
+}
+

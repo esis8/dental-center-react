@@ -1,0 +1,52 @@
+@use "./variables" as var;
+
+.home{
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  img{
+    margin-top: 30px;
+    width: 100%;
+  }
+  .title{
+    font-size: 48px;
+    font-weight: var.$font-weight-bold;
+    color: var.$extra-color-Dark;
+    margin-top: 16px;
+    text-align: center;
+    width: 80%;
+  }
+  .btn{
+    background-color: var.$extra-color-Dark;
+    color: var.$secundary-color-font;
+    width: 280px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 16px;
+    border-radius: 16px;
+    font-weight: var.$font-weight-bold;
+    cursor: pointer;
+    font-size: 20px;
+  }
+  @media (max-width: 800px){
+    .title{
+      font-size: 24px;
+    }
+  }
+
+}
+
+:global(body.dark){
+  .home{
+    .title{
+      color: var.$extra-color-light;
+    }
+    .btn{
+      background-color: var.$extra-color-light;;
+    }
+  }
+}

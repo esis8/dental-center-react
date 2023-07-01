@@ -1,0 +1,43 @@
+@use './variables' as var;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+
+
+:root {
+  font-family: var.$font-family-globals;
+  font-weight: var.$font-weight-regular;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+  list-style: none;
+  color: var.$primary-color-font;
+  font-family: var.$font-family-globals;
+  font-weight: var.$font-weight-regular;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body{
+  width: 100vw;
+  background: linear-gradient(155deg, rgba(251, 186, 119, 0.20) 0%, rgba(92, 137, 177, 0.20) 100%), radial-gradient(278.32% 59.67% at 49.53% 52.84%, #4672A2 5.30%, #7194B2 100%);
+  min-height: 100vh;
+  @media (min-width: 2000px){
+      width: 2000px;
+      margin-left: calc((100vw - 2000px)/2);
+  }
+}
+
+body.dark{
+  background: linear-gradient(98.56deg, rgba(251, 186, 119, 0.2) 0%, rgba(92, 137, 177, 0.2) 97.25%), linear-gradient(94.64deg, #001973 57.8%, #7194B2 176.45%);
+}
+

@@ -1,0 +1,131 @@
+@use "./variables" as var;
+
+.header{
+  height: 80px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  .logo{
+    width: 250px;
+  }
+  .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: calc(100% - 600px);
+    max-width: 500px;
+    .link{
+      font-size: 18px;
+      font-weight: var.$font-weight-semibold;
+      color: var.$primary-color-dark;
+      position: relative;
+      &:hover{
+        color: var.$secondary-color-light;
+      }
+      &::before{
+        content: '';
+        position: absolute;
+        top: 26px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background-color: var.$secondary-color-light;
+        transition: width 0.2s ease-in-out;
+        transform-origin: left;
+      }
+      &:hover::before{
+        width: 100%;
+        transform-origin: right;
+      }
+    }
+  }
+  .theme{
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .themeIcon{
+      background-color: var.$primary-color-dark;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-radius: 50%;
+      border: 1px solid var.$extra-color-Dark;
+      cursor: pointer;
+      :global(#icon){
+        fill: var.$extra-color-light;
+      }
+    }
+    .themeOptions{
+      z-index: 5;
+      position: absolute;
+      right: 20px;
+      top: 70px;
+      background-color: var.$primary-color-dark;
+      border: 1px solid var.$extra-color-Dark;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      justify-content: center;
+      padding: 8px 8px;
+      border-radius: 10px;
+      width: 150px;
+      .option{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        height: 24px;
+        padding: 5px 10px;
+        cursor: pointer;
+        :global(#icon){
+          fill: var.$secundary-color-font;
+        }
+        p{
+          color: var.$secundary-color-font;
+        }
+        &:hover{
+          background-color: var.$primary-color-light;
+          border-radius: 5px;
+        }
+        &.active{
+          p{
+            color: var.$extra-color-light;
+          }
+          :global(#icon){
+            fill: var.$extra-color-light;
+          }
+          
+        }
+      }
+    }
+  }
+  @media (max-width: 1024px){
+    .logo, .theme{
+      width: 50px;
+    }
+    .nav{
+      width: calc(100% - 200px);
+    }
+  }
+}
+
+:global(body.dark) {
+  .header{
+    .nav{
+      .link{
+        color: var.$secundary-color-font;
+        &:hover{
+          color: var.$primary-color-light;
+        }
+        &::before{
+          background-color: var.$primary-color-light;;
+        }
+      }
+    }
+  }
+}
