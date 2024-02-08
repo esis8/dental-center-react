@@ -57,7 +57,7 @@ export default function Contacto() {
 
   return (
     <div className={styles.contacto}>
-      <h1 className={styles.title}>Por favor deje sus Dajos para ser contactado</h1>
+      <h1 className={styles.title}>Por favor deje sus Dajos para ser contactado por nuestros especialistas</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
         <label htmlFor="name" className={styles.label}>
           <span>
